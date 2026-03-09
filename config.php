@@ -1,12 +1,12 @@
 <?php
 return [
     'db' => [
+        'url' => getenv('DATABASE_URL') ?: '',
         'host' => getenv('DB_HOST') ?: 'localhost',
         'name' => getenv('DB_NAME') ?: 'taascor_recruitment2',
         'user' => getenv('DB_USER') ?: 'root',
         'pass' => getenv('DB_PASS') ?: '',
-        'port' => getenv('DB_PORT') ?: '3306',
-        'charset' => 'utf8mb4',
+        'port' => getenv('DB_PORT') ?: '5432',
     ],
     'site' => [
         'name' => 'TAASCOR Management & General Services Corp.',
