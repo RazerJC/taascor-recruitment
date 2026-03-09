@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: taascor-recruitment
+    runtime: docker
+    repo: https://github.com/RazerJC/taascor-recruitment
+    branch: main
+    plan: free
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: taascor-db
+          property: connectionString
+
+databases:
+  - name: taascor-db
+    plan: free
