@@ -1,0 +1,16 @@
+# OS files
+Thumbs.db
+.DS_Store
+
+# IDE
+.vscode/
+.idea/
+
+# Documents
+*.docx
+
+# Uploads (if any)
+uploads/
+
+# Environment
+.env
