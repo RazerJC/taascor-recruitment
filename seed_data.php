@@ -8,6 +8,10 @@ require_once __DIR__ . '/lib/db.php';
 $pdo = db();
 $output = [];
 
+// Add missing columns if they don't exist yet
+try { $pdo->exec("ALTER TABLE jobs ADD COLUMN company_choice VARCHAR(255) DEFAULT ''"); $output[] = "Added company_choice to jobs"; } catch (Throwable $e) { $output[] = "jobs.company_choice already exists"; }
+try { $pdo->exec("ALTER TABLE applications ADD COLUMN form_data TEXT"); $output[] = "Added form_data to applications"; } catch (Throwable $e) { $output[] = "applications.form_data already exists"; }
+
 // --- USERS ---
 $users = [
     ['name' => 'TAASCOR Admin', 'email' => 'admin@taascor.com', 'role' => 'admin', 'password_hash' => '$2y$10$H3ub2XKxJD2AQXL3yzgzG.kJs7ymonRWW/sTF2pra82Wr.8pzxTgK', 'created_at' => '2026-02-23 11:15:13'],
