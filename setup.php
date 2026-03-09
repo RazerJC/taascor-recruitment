@@ -23,7 +23,8 @@ $pdo->exec("
         short_description VARCHAR(255) DEFAULT '',
         requirements TEXT,
         is_active SMALLINT NOT NULL DEFAULT 1,
-        created_at TIMESTAMP NOT NULL DEFAULT NOW()
+        created_at TIMESTAMP NOT NULL DEFAULT NOW(),
+        company_choice VARCHAR(255) DEFAULT ''
     );
 ");
 
@@ -68,7 +69,8 @@ $pdo->exec("
         experience TEXT,
         education TEXT,
         status VARCHAR(40) NOT NULL DEFAULT 'New',
-        created_at TIMESTAMP NOT NULL DEFAULT NOW()
+        created_at TIMESTAMP NOT NULL DEFAULT NOW(),
+        form_data TEXT
     );
 ");
 
